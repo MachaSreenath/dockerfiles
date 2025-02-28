@@ -1,5 +1,7 @@
 FROM almalinux:8
 RUN yum install nginx -y
 RUN rm -rf usr/share/nginx/html/index.html
-ADD https://github.com/MachaSreenath/notes/01-crontab.git usr/share/nginx/html/index.html
+COPY index.html /usr/share/nginx/html/
+ADD https://raw.githubusercontent.com/MachaSreenath/notes/refs/heads/main/01-crontab.txt /tmp/
+ADD sample-1.tar /tmp/
 CMD ["nginx","-g","daemon off;"]
