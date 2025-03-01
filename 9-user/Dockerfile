@@ -1,5 +1,5 @@
 FROM almalinux:8
-#to avoid root access to the container, adding the user.
+#we have to restrice the root access to the container, so adding the user.
 RUN adduser newuser
 USER newuser
 CMD ["sleep","60"]
